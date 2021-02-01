@@ -27,7 +27,6 @@ dy = [0, 1, 0, -1]
 # 너비 우선 탐색(BFS) 진행
 while q:
     virus, s, x, y = q.popleft()
-    print(virus, s, x, y)
     # 정확히 s초가 지나거나, 큐가 빌 때까지 반복
     if s == target_s:
         break
@@ -40,8 +39,6 @@ while q:
             # 아직 방문하지 않은 위치라면, 그 위치에 바이러스 넣기
             if graph[nx][ny] == 0:
                 graph[nx][ny] = virus
-                print(graph)
-                print("")
                 q.append((virus, s + 1, nx, ny))
 
 print(graph[target_x - 1][target_y - 1])
