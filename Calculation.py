@@ -13,23 +13,27 @@ max_value = -1e9
 def dfs(i, now):
     global min_value, max_value, add, sub, mul, div
     # 모든 연산자를 다 사용한 경우, 최솟값과 최댓값 업데이트
+    
     if i == n:
         min_value = min(min_value, now)
         max_value = max(max_value, now)
     else:
         # 각 연산자에 대하여 재귀적으로 수행
         if add > 0:
+            print("i :", i)
             add -= 1
             print("add1 : ", add)
             dfs(i + 1, now + data[i])
             add += 1
-            #print("add2 : ", add)
+            print("add2 : ", add)
         if sub > 0:
+            print("i :", i)
+            print("add3 : ", add)            
             sub -= 1
             print("sub1 : ", sub)
             dfs(i + 1, now - data[i])
             sub += 1
-            #print("sub2 : ", sub)
+            print("sub2 : ", sub)
         if mul > 0:
             mul -= 1
             print("mul1 : ", mul)
