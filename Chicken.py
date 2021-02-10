@@ -12,8 +12,9 @@ for i in range(N):
             chicken.append([i, j])
 
 # 모든 치킨 집 중에서 m개의 치킨 집을 뽑는 조합 계산
+print(chicken)
 candidates = list(combinations(chicken, m))
-
+print(candidates)
 
 # 치킨 거리의 합을 계산하는 함수
 def get_sum(candidate):

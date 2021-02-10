@@ -1,32 +1,23 @@
-N = int(input()) # 전체 상담 개수
-T = [] # 각 상담을 완료하는데 걸리는 기간
-P = [] # 각 상담을 완료했을 때 받을 수 있는 금액
-dp = [0] * (N + 1) # 다이나믹 프로그래밍을 위한 1차원 DP 테이블 초기화
-max_value = 0
+n = int(input())
+array = list(map(int, input().split()))
+# 순서를 뒤집어 '최장 증가 부분 수열' 문제로 변환
+array.reverse()
+print(array)
 
-for _ in range(N):
-    x, y = map(int, input().split())
-    T.append(x)
-    P.append(y)
+# 다이나믹 프로그래밍을 위한 1차원 DP 테이블 초기화
+dp = [1] * n
 
-result = 0
+# 가장 긴 증가하는 부분 수열(LIS) 알고리즘 수행
+for i in range(1, n):
+    for j in range(0, i):
+        # print("array[j] : ", array[j])
+        # print("array[i] : ", array[i])
 
-# 리스트를 뒤에서부터 거꾸로 확인
-for i in range(N):
-    time = 0
-    res = 0
-    for j in range(i, N):
-        if j < time:
-            continue
-        else:
-            time = T[j] + j
-            print("time : ", time)
-            if time > N:
-                break
-            else:
-                res = P[j] + res
-                print("res : ", res)
-    result = max(result, res)
-    print("result : ", result)
+        if array[j] < array[i]:
+            dp[i] = max(dp[i], dp[j] + 1)
+            print("dp[i] : ", dp[i])
+    print("-------")
 
-print(result)
+# 열외해야 하는 병사의 최소 수를 출력
+# print("dp : ", dp)
+# print(n - max(dp))

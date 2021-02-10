@@ -49,13 +49,16 @@ def process(x, y, index):
 
 total_count = 0
 
+temp_sum = 0
 # 더 이상 인구 이동을 할 수 없을 때까지 반복
 while True:
     union = [[-1] * n for _ in range(n)]
     index = 0
     for i in range(n):
         for j in range(n):
+            print("union[{0}][{1}] : {2}".format(i, j, union[i][j]))
             if union[i][j] == -1: # 해당 나라가 아직 처리되지 않았다면
+                print("이동 몇번? : ", ++temp_sum)
                 process(i, j, index)
                 index += 1
 

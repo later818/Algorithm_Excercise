@@ -26,6 +26,7 @@ dy = [0, 1, 0, -1]
 
 # 너비 우선 탐색(BFS) 진행
 while q:
+    print(q)
     virus, s, x, y = q.popleft()
     # 정확히 s초가 지나거나, 큐가 빌 때까지 반복
     if s == target_s:
