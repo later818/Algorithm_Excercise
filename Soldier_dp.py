@@ -14,8 +14,12 @@ for i in range(1, n):
         # print("array[i] : ", array[i])
 
         if array[j] < array[i]:
+            # print("i : ", i)
+            # print("j : ", j)
+            # print("dp[i] : ", dp[i])
+            # print("dp[j]+1 : ", dp[j]+1)
             dp[i] = max(dp[i], dp[j] + 1)
-            print("dp[i] : ", dp[i])
+            print("dp : ", dp)
     print("-------")
 
 # 열외해야 하는 병사의 최소 수를 출력
