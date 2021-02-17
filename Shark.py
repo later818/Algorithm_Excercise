@@ -35,7 +35,8 @@ def bfs(now_x, now_y):
     # 값이 -1이라면 도달할 수 없다는 의미 (초기화)
     dist = [[-1] * n for _ in range(n)]
     # 시작 위치는 도달이 가능하다고 보며 거리는 0
-    q = deque([(now_x, now_y)])
+    q = deque()
+    q.append([now_x, now_y])
     dist[now_x][now_y] = 0
     while q:
         x, y = q.popleft()
@@ -48,6 +49,7 @@ def bfs(now_x, now_y):
                     dist[nx][ny] = dist[x][y] + 1
                     q.append((nx, ny))
     # 모든 위치까지의 최단 거리 테이블 반환
+    print(dist)
     return dist
 
 # 최단 거리 테이블이 주어졌을 때, 먹을 물고기를 찾는 함수
