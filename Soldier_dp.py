@@ -10,14 +10,14 @@ dp = [1] * n
 # 가장 긴 증가하는 부분 수열(LIS) 알고리즘 수행
 for i in range(1, n):
     for j in range(0, i):
-        # print("array[j] : ", array[j])
-        # print("array[i] : ", array[i])
+        print("array[j] : ", array[j])
+        print("array[i] : ", array[i])
 
         if array[j] < array[i]:
-            # print("i : ", i)
-            # print("j : ", j)
-            # print("dp[i] : ", dp[i])
-            # print("dp[j]+1 : ", dp[j]+1)
+            print("i : ", i)
+            print("j : ", j)
+            print("dp[i] : ", dp[i])
+            print("dp[j]+1 : ", dp[j]+1)
             dp[i] = max(dp[i], dp[j] + 1)
             print("dp : ", dp)
     print("-------")
