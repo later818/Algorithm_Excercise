@@ -20,3 +20,4 @@ for t in range(T):
     dec_list.sort(reverse=True) # 내림차순 정렬
      
     print('#%s %s'%(t+1, dec_list[K-1]))
+    
