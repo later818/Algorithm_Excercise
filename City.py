@@ -1,3 +1,5 @@
+print("AAA")
+
 from collections import deque
 
 # 도시의 개수, 도로의 개수, 거리 정보, 출발 도시 번호
